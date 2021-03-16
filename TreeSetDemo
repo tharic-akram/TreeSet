@@ -71,9 +71,24 @@ class MyComparator implements Comparator
 	{
                 Employee e1=(Employee)obj1;
 		Employee e2=(Employee)obj2;
-		Double salary1=e1.salary;
-		Double salary2=e2.salary;
-		return salary1.compareTo(salary2);
+		if(e1.salary.compareTo(e2.salary) == 0){
+			if(e1.name.compareTo(e2.name) ==0){
+				if(e1.age.compareTo(e2.age) ==0){
+					return e1.eid.compareTo(e2.eid);
+				}
+				else{
+					return e1.age.compareTo(e2.age);
+				}
+				
+			}
+			else {
+				return e1.name.compareTo(e2.name);
+			}
+		}
+		else{
+			return e1.salary.compareTo(e2.salary);
+		}
+		
 		
 			
 	}
